@@ -19,6 +19,7 @@
     "react-scripts": "^3.2.0",
     "react-toastify": "^5.4.1",
     "recompose": "^0.30.0",
+    "reducers": "^3.0.0-alpha",
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "redux-api": "^0.11.2",

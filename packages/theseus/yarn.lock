@@ -7176,6 +7176,11 @@ merge2@^1.2.3, merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.3.0.tgz#5b366ee83b2f1582c48f87e47cf1a9352103ca81"
   integrity sha512-2j4DAdlBOkiSZIsaXk4mTE3sRS02yBHAtfy127xRV3bQUFqXkjHCHLW6Scv7DwNRbIWNHH8zpnz9zMaKXIdvYw==
 
+method@~2.0.x:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/method/-/method-2.0.0.tgz#e449848defa6daef10b8163d9d9aa2d071b7500f"
+  integrity sha1-5EmEje+m2u8QuBY9nZqi0HG3UA8=
+
 methods@^1.1.1, methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
@@ -9689,6 +9694,20 @@ reduce-reducers@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.4.3.tgz#8e052618801cd8fc2714b4915adaa8937eb6d66c"
   integrity sha512-+CNMnI8QhgVMtAt54uQs3kUxC3Sybpa7Y63HR14uGLgI9/QR5ggHvpxwhGGe3wmx5V91YwqQIblN9k5lspAmGw==
+
+reducers@^3.0.0-alpha:
+  version "3.0.0-alpha"
+  resolved "https://registry.yarnpkg.com/reducers/-/reducers-3.0.0-alpha.tgz#0b784dd1199e56b2823f4ad60731c30fb6b0457e"
+  integrity sha1-C3hN0RmeVrKCP0rWBzHDD7awRX4=
+  dependencies:
+    reducible "~1.x.0"
+
+reducible@~1.x.0:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/reducible/-/reducible-1.0.6.tgz#331722d14189f8f392dc9b88341aec603b25c35e"
+  integrity sha1-Mxci0UGJ+POS3JuINBrsYDslw14=
+  dependencies:
+    method "~2.0.x"
 
 redux-actions@^2.6.5:
   version "2.6.5"
