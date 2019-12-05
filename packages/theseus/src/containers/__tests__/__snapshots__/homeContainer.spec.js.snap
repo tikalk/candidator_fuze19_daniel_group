@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <Header> renders correctly - logged in 1`] = `
+<div
+  className="sc-bdVaJa fKAxYV"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+`;
+
+exports[`Test <Header> renders correctly - not logged in 1`] = `
+<div
+  className="sc-bdVaJa fKAxYV"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <div
+    className="sc-htpNat dlKyGL"
+  >
+    <select
+      className="sc-bxivhb VSJEm"
+      onChange={[Function]}
+    >
+      <option>
+        Javascript
+      </option>
+      <option>
+        Java
+      </option>
+      <option>
+        Python
+      </option>
+    </select>
+    <button
+      className="sc-bwzfXH iSltUj"
+      onClick={[Function]}
+    >
+      Start
+    </button>
+  </div>
+</div>
+`;

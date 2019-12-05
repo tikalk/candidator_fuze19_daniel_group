@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <Question> should render correctly 1`] = `
+<div
+  className="sc-bdVaJa iqBxLi"
+>
+  <div
+    className="sc-htpNat hvVCPt"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>description...</p>",
+      }
+    }
+  />
+  <img
+    className="sc-bwzfXH ijDTxx"
+    src="http://url-of-hero.image"
+  />
+</div>
+`;
