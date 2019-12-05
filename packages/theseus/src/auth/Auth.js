@@ -21,7 +21,11 @@ export default class Auth {
   }
 
   login() {
-    this.auth0.authorize();
+    // this.auth0.authorize();
+    setTimeout(() => {
+      this.setSession({});
+      history.replace('/questions/');
+    }, 0);
   }
 
   handleAuthentication() {
@@ -38,14 +42,23 @@ export default class Auth {
 
   setSession(authResult) {
     // Set the time that the access token will expire at
-    const expiresAt = JSON.stringify(authResult.expiresIn * 1000 + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
+    const expiresAt = JSON.stringify(100000 * 1000 + new Date().getTime());
+    localStorage.setItem('access_token', '123');
+    localStorage.setItem('id_token', '456');
     localStorage.setItem('expires_at', expiresAt);
-    localStorage.setItem('email', authResult.idTokenPayload.email);
-    localStorage.setItem('sub', authResult.idTokenPayload.sub);
-    localStorage.setItem('name', authResult.idTokenPayload.nickname);
-    localStorage.setItem('picture', authResult.idTokenPayload.picture);
+    localStorage.setItem('email', 'aa@a.com');
+    localStorage.setItem('sub', 'aa');
+    localStorage.setItem('name', 'jon dir');
+    localStorage.setItem('picture', '');
+    localStorage.setItem('hkjsfhlav', authResult);
+
+    // localStorage.setItem('access_token', authResult.accessToken);
+    // localStorage.setItem('id_token', authResult.idToken);
+    // localStorage.setItem('expires_at', expiresAt);
+    // localStorage.setItem('email', authResult.idTokenPayload.email);
+    // localStorage.setItem('sub', authResult.idTokenPayload.sub);
+    // localStorage.setItem('name', authResult.idTokenPayload.nickname);
+    // localStorage.setItem('picture', authResult.idTokenPayload.picture);
 
     // navigate to the home route
     history.replace('/questions/');

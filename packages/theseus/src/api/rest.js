@@ -1,6 +1,8 @@
 import reduxApi from 'redux-api';
 import Auth from '../auth/Auth';
 
+// const URL = process.env.REACT_APP_MAZE_SERVER_URL;
+// const URL = 'http://localhost:3000';
 const URL = process.env.REACT_APP_MAZE_SERVER_URL;
 
 export default reduxApi({
