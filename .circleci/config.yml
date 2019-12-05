@@ -1,7 +1,6 @@
 version: 2.1
 jobs:
   build:
-    working_directory: $CIRCLE_WORKING_DIRECTORY/packages/theseus
     docker:
       - image: docker:17.05.0-ce-git
     steps:
@@ -9,6 +8,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
+            cd packages/theseus
             docker build .
       # ... steps for building/testing app ...
 
