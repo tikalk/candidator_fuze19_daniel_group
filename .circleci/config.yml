@@ -1,6 +1,7 @@
 version: 2.1
 jobs:
   build:
+    working_directory: ~/packages/theseus
     environment:
       IMAGE_NAME: fuzeteam3/candidator
     docker:
