@@ -4,19 +4,19 @@ jobs:
     environment:
       IMAGE_NAME: tikal/candidator_fuze19_daniel_group
     docker:
-        - image: circleci/buildpack-deps:stretch
-      steps:
-        - checkout
-        - setup_remote_docker
-        - run:
-            name: Build Docker image
-            command: |
-              docker build -f packages/theseus/Dockerfile -t $IMAGE_NAME:latest .
-        -run:
-            name: Push Docker image
-            command: |
-              docker login -u $DOCKER_USER -p $DOCKER_PASS
-              docker push $IMAGE_NAME
+      - image: circleci/buildpack-deps:stretch
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -f packages/theseus/Dockerfile -t $IMAGE_NAME:latest .
+      -run:
+          name: Push Docker image
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push $IMAGE_NAME
 
       # ... steps for building/testing app ...
 
