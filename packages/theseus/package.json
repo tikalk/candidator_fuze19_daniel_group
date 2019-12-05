@@ -3,7 +3,6 @@
   "description": "",
   "version": "0.1.0",
   "author": "",
-  "homepage": "http://candidator-node-2.dev.68.183.254.102.xip.io",
   "dependencies": {
     "auth0-js": "^9.11.3",
     "axios": "^0.19.0",
