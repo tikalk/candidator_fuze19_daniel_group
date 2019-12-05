@@ -2,21 +2,30 @@ version: 2.1
 jobs:
   build:
     environment:
-      IMAGE_NAME: fuzeteam3/candidator
+      FE_IMAGE_NAME: fuzeteam3/candidator
+      BE_IMAGE_NAME: fuzeteam3/candidator-be
     docker:
       - image: circleci/buildpack-deps:stretch
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Build Docker image
+          name: Build Backend Docker image
+          working_directory: packages/serverless
+          command: |
+            docker build -f Dockerfile -t $BE_IMAGE_NAME:$CIRCLE_BUILD_NUM .
+      - run:
+          name: Build Front Docker image
           working_directory: packages/theseus
           command: |
-            docker build -f Dockerfile -t $IMAGE_NAME:$CIRCLE_BUILD_NUM .
+            docker build -f Dockerfile -t $FE_IMAGE_NAME:$CIRCLE_BUILD_NUM .
       - run:
           name: Push Docker image
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker tag $IMAGE_NAME:$CIRCLE_BUILD_NUM $IMAGE_NAME:latest
-            docker push $IMAGE_NAME:$CIRCLE_BUILD_NUM
-            docker push $IMAGE_NAME:latest
+            docker tag $BE_IMAGE_NAME:$CIRCLE_BUILD_NUM $BE_IMAGE_NAME:latest
+            docker tag $FE_IMAGE_NAME:$CIRCLE_BUILD_NUM $FE_IMAGE_NAME:latest
+            docker push $BE_IMAGE_NAME:$CIRCLE_BUILD_NUM
+            docker push $FE_IMAGE_NAME:$CIRCLE_BUILD_NUM
+            docker push $BE_IMAGE_NAME:latest
+            docker push $FE_IMAGE_NAME:latest
