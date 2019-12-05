@@ -1,0 +1,35 @@
+apiVersion: serving.knative.dev/v1 # Current version of Knative
+kind: Service
+metadata:
+  name: candidator-node-frontend # The name of the app
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
+    spec:
+      containers:
+        - image: fuzeteam3/candidator:44 # The URL to the image of the app
+          env:
+            - name: REACT_APP_MAZE_SERVER_URL
+              value: http://candidator-node-backend.dev.68.183.254.102.xip.io
+            - name: MONGO_USER
+              valueFrom:
+                secretKeyRef:
+                  key: mongoUser
+                  name: atlas-mongo
+            - name: MONGO_PWD
+              valueFrom:
+                secretKeyRef:
+                  key: mongoPassword
+                  name: atlas-mongo
+            - name: MONGO_URL
+              valueFrom:
+                secretKeyRef:
+                  key: mongoUrl
+                  name: atlas-mongo
+            - name: MONGO_DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: mongoDB
+                  name: atlas-mongo
