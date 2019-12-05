@@ -4,7 +4,6 @@ WORKDIR /app
 COPY package.json ./
 RUN yarn
 
-RUN npm install react-scripts@3.0.1 -g --silent
 COPY . ./
 RUN npm run build
 
