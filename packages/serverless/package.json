@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "develop": "serverless offline --stage dev",
+        "develop": "serverless offline --stage dev --host 0.0.0.0 --port 8080",
         "deploy": "serverless deloy"
     },
     "dependencies": {

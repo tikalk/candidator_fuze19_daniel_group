@@ -14,18 +14,16 @@ export function HomeContainer({ auth, language }) {
   return (
     <Styled.Content>
       <div dangerouslySetInnerHTML={{ __html: markdown.toHTML(text) }} />
-      {!auth.isAuthenticated() && (
-        <Styled.ButtonWrapper>
-          {/* <Styled.Select onChange={v => setLanguage(v.target.value)}>
-            {Options.map((option, i) => (
-              <option key={`option-${i}`}>{option}</option>
-            ))}
-          </Styled.Select> */}
-          <Button primary onClick={login}>
-            Start
-          </Button>
-        </Styled.ButtonWrapper>
-      )}
+      <Styled.ButtonWrapper>
+        {/* <Styled.Select onChange={v => setLanguage(v.target.value)}>
+          {Options.map((option, i) => (
+            <option key={`option-${i}`}>{option}</option>
+          ))}
+        </Styled.Select> */}
+        <Button primary onClick={login}>
+          Start
+        </Button>
+      </Styled.ButtonWrapper>
     </Styled.Content>
   );
 }
