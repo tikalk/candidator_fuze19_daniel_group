@@ -3,12 +3,13 @@ jobs:
   build:
     docker:
       - image: docker:17.05.0-ce-git
+    working_directory: ~/packages/theseus
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Build Docker image
           command: |
-            cd packages/theseus
             docker build .
       # ... steps for building/testing app ...
 
