@@ -1,18 +1,25 @@
 version: 2.1
 jobs:
   build:
+    working_directory: packages/theseus
     docker:
-      - image: gcr.io/cloud-builders/docker
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t tikal/candidator_fuze19_daniel_group:$TAG .
       # ... steps for building/testing app ...
 
 #      - setup_remote_docker:
 #          docker_layer_caching: true
 
       # build and push Docker image
-      - run: |
-          TAG=0.1.$CIRCLE_BUILD_NUM
-          docker build -f packages/theseus/Dockerfile -t tikal/candidator_fuze19_daniel_group:$TAG .
+#      - run: |
+#          TAG=0.1.$CIRCLE_BUILD_NUM
+#          docker build -f packages/theseus/Dockerfile -t tikal/candidator_fuze19_daniel_group:$TAG .
 #          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
 #          docker push tikal/candidator_fuze19_daniel_group:$TAG
+#      - name: docker
+#        args:
