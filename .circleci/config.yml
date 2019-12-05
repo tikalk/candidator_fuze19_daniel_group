@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     environment:
-      IMAGE_NAME: tikal/candidator_fuze19_daniel_group
+      IMAGE_NAME: fuzeteam3/candidator_fuze19_daniel_group
     docker:
       - image: circleci/buildpack-deps:stretch
     steps:
