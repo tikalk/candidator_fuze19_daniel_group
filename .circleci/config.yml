@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build .
+            sudo docker build .
       # ... steps for building/testing app ...
 
 #      - setup_remote_docker:
