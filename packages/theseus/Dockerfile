@@ -1,11 +1,11 @@
 FROM node:slim
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN yarn
+WORKDIR /usr/src
 COPY . ./
-EXPOSE 5000
+RUN yarn
+
 RUN npm run build && \
     yarn global add serve
 
+EXPOSE 5000
 CMD [ "serve", "-s", "build" ]
