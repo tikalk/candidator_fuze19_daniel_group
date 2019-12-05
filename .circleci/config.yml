@@ -3,14 +3,13 @@ jobs:
   build:
     docker:
       - image: circleci/buildpack-deps:stretch
-    working_directory: ~/packages/theseus
     steps:
       - checkout
       - setup_remote_docker
       - run:
           name: Build Docker image
           command: |
-            docker build .
+            docker build -f ~/packages/theseus/Dockerfile .
       # ... steps for building/testing app ...
 
 #      - setup_remote_docker:
